@@ -13,6 +13,7 @@ DrawCircleGeodesic.onSetup = function(opts) {
   dragPan.disable(this);
   this.updateUIClasses({ mouse: Constants.cursors.ADD });
   this.setActionableState(); // default actionable state is false for all actions
+  alert("DrawCircleGeodesic.onSetup called");
   return {};
 };
 
@@ -21,6 +22,7 @@ DrawCircleGeodesic.onMouseDown = DrawCircleGeodesic.onTouchStart = function(stat
   const circle = this.newFeature(createCircle(center, Number.EPSILON));
   this.addFeature(circle);
   state.circle = circle;
+
 };
 
 DrawCircleGeodesic.onDrag = DrawCircleGeodesic.onTouchMove = function(state, e) {
@@ -33,6 +35,7 @@ DrawCircleGeodesic.onDrag = DrawCircleGeodesic.onTouchMove = function(state, e) 
     state.circle.properties[Constants.properties.CIRCLE_RADIUS] = radius;
     state.circle[Constants.properties.CIRCLE_HANDLE_BEARING] = handleBearing;
     state.circle.changed();
+    alert("DrawCircleGeodesic.onDrag called");
   }
 };
 

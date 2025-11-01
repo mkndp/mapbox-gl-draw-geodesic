@@ -4,10 +4,12 @@ export const { cursors, geojsonTypes, events, meta, activeStates } = MapboxDraw.
 
 export const modes = {
   ...MapboxDraw.constants.modes,
-  DRAW_CIRCLE: 'draw_circle'
+  DRAW_CIRCLE: 'draw_circle',
+  DRAW_RECTANGLE: 'draw_rectangle'
 };
 
 export const properties = {
   CIRCLE_RADIUS: 'circleRadius',
-  CIRCLE_HANDLE_BEARING: 'circleHandleBearing'
+  CIRCLE_HANDLE_BEARING: 'circleHandleBearing',
+  RECTANGLE: 'rectangle'
 };
